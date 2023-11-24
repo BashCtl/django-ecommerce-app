@@ -1,1 +1,31 @@
-<h1>Login</h1>
+{% extends './base_auth.html' %}
+
+{% block title%}Login{% endblock %}
+
+{% block content %}
+<div class="card bg-light p-5">
+    <h2 data-aos="fade-up" class="text-dark">Login</h2>
+    <form action="." method="POST">
+        {% csrf_token %}
+    
+        <label for="email">Email</label>
+        <div class="form-group p-2">
+           {{ form.username }}
+        </div>
+    
+        <label for="pass1">Password</label>
+        <div class="form-group p-2">
+           {{ form.password }}
+        </div>
+    
+        <br>
+        <button type="submit" class="btn btn-dark">Login</button>
+        <br>
+        Don't have an account? <a href="{% url 'signup' %}">Sign up</a>
+        <br>
+    
+    
+    </form>
+</div>
+
+{% endblock %}

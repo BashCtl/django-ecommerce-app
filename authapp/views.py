@@ -8,8 +8,10 @@ def signup(request):
     if request.method == 'POST':
         form = SingupForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('user_login')
+            user = form.save(commit=False)
+            user.username=user.email.lower()
+            user.save()
+            return redirect('login')
     else:
         form = SingupForm()
 
@@ -18,8 +20,7 @@ def signup(request):
     return render(request, 'authentication/signup.html', context)
 
 
-def user_login(request):
-    return render(request, 'authentication/login.html')
+
 
 
 def user_logout(request):

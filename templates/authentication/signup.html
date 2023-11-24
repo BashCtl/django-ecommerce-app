@@ -1,5 +1,6 @@
 {% extends './base_auth.html' %}
 
+{% block title%}Sing up{% endblock %}
 
 {% block content %}
 <div class="card bg-light p-5">
@@ -25,7 +26,7 @@
         <br>
         <button type="submit" class="btn btn-dark">SignIn</button>
         <br>
-        Already User? <a href="{% url 'user_login' %}">Login</a>
+        Already User? <a href="{% url 'login' %}">Login</a>
         <br>
     
     
