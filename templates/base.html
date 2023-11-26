@@ -36,9 +36,9 @@
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="{% url 'index' %}">Fuck You, Store</a></h1>
+
       <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      <a href="{% url 'index' %}" class="logo"><img src="{% static 'images/logo.png' %}" alt="" class="img-fluid">Fuck You, Store</a>
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -68,7 +68,7 @@
     <div class="hero-container">
       <h3>Welcome to <strong>Store</strong></h3>
       <h1>We're Insane Agency</h1>
-      <h2>We are team of talented designers making websites with Bootstrap</h2>
+      <h2>We'll do our best to insult you during your shopping time</h2>
       <a href="#" class="btn-get-started scrollto">Shop Now</a>
     </div>
   </section><!-- End Hero -->
