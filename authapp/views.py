@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.utils.http import urlsafe_base64_decode
 from django.utils.encoding import force_str
 from django.contrib import messages
+from django.contrib.auth import logout
 from django.views import View
 from django.contrib.auth.models import User
 
@@ -33,6 +34,7 @@ def signup(request):
 
 
 def user_logout(request):
+    logout(request)
     return redirect('login')
 
 
