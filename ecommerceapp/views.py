@@ -1,12 +1,17 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import ContactForm
+from .models import Product, ProductCategory
 
 # Create your views here.
 
 
 def index(request):
-    return render(request, 'index.html')
+    products = Product.objects.all()
+    categories = ProductCategory.objects.all()
+
+    context = {'products': products, 'categories': categories}
+    return render(request, 'index.html', context)
 
 
 def contact(request):
